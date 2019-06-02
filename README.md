@@ -2,6 +2,8 @@
 
 <i>Website created using Django framework which predicts the winner of IPL match on the basis of previous 10 year Dataset</i>
 
+<hr>
+
 This project performs the analysis on the past 10 year <b>Kaggle</b> dataset and provides winning percentage for a particular team. Let say if there is match between Team A and Team B then it will provide us the result on the basis of -
 1. If Team A Batting first and Team B fielding first <br>
 2. If Team B Batting first and Team B fielding first <br>
@@ -21,5 +23,6 @@ Techstack used - <br>
 3. HTML,CSS and Javascript <br> 
 4. Libraries like Pandas,Numpy for Data Analysis 
 
+<hr>
 References -
 <a href ="https://colorlib.com/wp/templates/">Template</a>
