@@ -8,12 +8,13 @@ This project performs the analysis on the past 10 year <b>Kaggle</b> dataset and
 
 Steps performed to create this project -
 <hr>
-(i) Created a project using Django with name and performed changes according to the requirement. <br>
+(i)  Created a project using Django with name and performed changes according to the requirement. <br>
 (ii) Deployed it on localhost:8000 <br>
-(iii) Performed analysis on the dataset and find some insights for prediction using Jupyter Notebook. <br> 
+(iii)Performed analysis on the dataset and find some insights for prediction using Jupyter Notebook. <br> 
 (iv) After completing Django part and Anslysis work, merged both of them. <br>
-(v) Yes it's done now you check and predict the winner of th maches between your favourite team 
+(v)  Yes it's done now you check and predict the winner of th maches between your favourite team 
 
+<hr>
 Techstack used - <br>
 1. Python 3 <br>
 2. Django <br>
@@ -22,5 +23,3 @@ Techstack used - <br>
 
 References -
 <a href ="https://colorlib.com/wp/templates/">Template</a>
-
-
