@@ -24,7 +24,8 @@ Techstack used - <br>
 4. Libraries like Pandas,Numpy for Data Analysis <br>
 5. Twitter API
 
-OUTPUT - <hr>
+<hr>
+OUTPUT - <br> 
 <a href ="https://drive.google.com/open?id=16_60bvMq9P7oFdLzxmECgNTdBnr6B0Am"> Check the output screenshots</a>
 
 <hr>
