@@ -1,8 +1,8 @@
-<strong> IPL Match Winner Prediction </strong>
+<title> IPL Match Winner Prediction </title>
 
-<i>Website created using Django framework which predicts the winner of IPL match on the basis of previous 10 year Dataset</i>
+<b>Website created using Django framework which predicts the winner of IPL match on the basis of previous 10 year Dataset</b>
 
-Techstack used - <hr>
+Techstack used - <br>
 1.Python 3 <br>
 2.Django <br>
 3.HTML,CSS and Javascript <br> 
