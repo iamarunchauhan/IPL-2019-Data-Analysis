@@ -1,0 +1,561 @@
+  <!DOCTYPE HTML>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      {% load static %}
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Winner Prediction &mdash; IPL 2019</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link rel="stylesheet" type="text/css" href= "//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700" >
+
+      <link rel="stylesheet" href= '{% static "pages/css/bootstrap.min.css" %}' />
+      <link rel="stylesheet" href= '{% static "pages/css/animate.css" %}' />
+      <link rel="stylesheet" href= '{% static "pages/css/owl.carousel.min.css" %}' />
+      <link rel="stylesheet" href= '{% static "pages/css/aos.css" %}' />
+      <link rel="stylesheet" href= '{% static "pages/css/bootstrap-datepicker.css" %}' />
+      <link rel="stylesheet" href= '{% static "pages/css/jquery.timepicker.css" %}' />
+      <link rel="stylesheet" href= '{% static "pages/css/fancybox.min.css" %}' />
+      
+      <link rel="stylesheet" href= '{% static "pages/fonts/ionicons/css/ionicons.min.css" %}' />
+      <link rel="stylesheet" href= '{% static "pages/fonts/fontawesome/css/font-awesome.min.css" %}' />
+
+      <!-- Theme Style -->
+      <link rel="stylesheet" href= '{% static "pages/css/style.css" %}' />
+    </head>
+    <body data-spy="scroll" data-target="#templateux-navbar" data-offset="200">
+	
+    <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="templateux-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/"><span class="text-danger">IPL</span>2019</a>
+        <div class="site-menu-toggle js-site-menu-toggle  ml-auto"  data-aos="fade" data-toggle="collapse" data-target="#templateux-navbar-nav" aria-controls="templateux-navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <!-- END menu-toggle -->
+
+        <div class="collapse navbar-collapse" id="templateux-navbar-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#section-home">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-facts">2019 FACTS</a></li>
+            <!--<li class="nav-item"><a class="nav-link" href="#section-ptstable">Points Table</a></li>-->
+            <li class="nav-item"><a class="nav-link" href="#section-team">TEAMS</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-leaders">LEADERS</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-twitter">WHAT TWITTER SAYS ? </a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-winning">WINNING DIARIES</a></li>
+            <!--<li class="nav-item"><a class="nav-link" href="#section-contact">Contact</a></li>-->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+	<!--<marquee> Match </marquee>-->
+	
+      <section class="site-hero overlay" style= "background-image: url('{% static "pages/images/ipl_image.jpg" %}')" data-stellar-background-ratio="0.5" id="section-home">
+        <div class="container">
+          <div class="row site-hero-inner justify-content-center align-items-center">
+            <div class="col-md-10 text-center" data-aos="fade-up">
+              <h1 class="heading"></h1>
+            </div>
+          </div>
+        </div>
+
+        <a class="mouse smoothscroll" href="#next" >
+          <div class="mouse-icon">
+            <span class="mouse-wheel"></span>
+          </div>
+        </a>
+      </section>
+      <!-- END section -->
+
+      <section class="section bg-light pb-0"  >
+        <div class="container">
+         
+          <div class="row check-availabilty" id="next">
+            <div class="block-32" data-aos="fade-up" data-aos-offset="-200">
+
+              <form method ="POST" action="/" name = "form1">
+                {% csrf_token %}
+                <div class="row">
+                  <!--<div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
+                    <label for="checkin_date" class="font-weight-bold text-black">Check In</label>
+                    <div class="field-icon-wrap">
+                      <div class="icon"><span class="icon-calendar"></span></div>
+                      <input type="text" id="checkin_date" class="form-control">
+                    </div>
+                  </div>-->
+                  <!--<div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
+                    <label for="checkout_date" class="font-weight-bold text-black">Check Out</label>
+                    <div class="field-icon-wrap">
+                      <div class="icon"><span class="icon-calendar"></span></div>
+                      <input type="text" id="checkout_date" class="form-control">
+                    </div>
+                  </div>-->
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <div class="row">
+                      <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="Team1" class="font-weight-bold text-black">Team 1</label>
+                        <div class="field-icon-wrap">
+                          <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                          <select name="tname1" id="Team1" class="form-control">
+                            <option value="Chennai Super Kings">Chennai Super Kings</option>
+                            <option value="Delhi Capitals">Delhi Capitals</option>
+                            <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                            <option value="Mumbai Indians">Mumbai Indians</option>
+							<option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                            <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                            <option value="Rajasthan Royals">Rajasthan Royals</option>
+                            <option value="Kings XI Punjab">Kings XI Punjab</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="Team2" class="font-weight-bold text-black">Team 2</label>
+                        <div class="field-icon-wrap">
+                          <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                          <select name="tname2" id="Team2" class="form-control">
+                            <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                            <option value="Mumbai Indians">Mumbai Indians</option>
+							<option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                            <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                            <option value="Rajasthan Royals">Rajasthan Royals</option>
+                            <option value="Kings XI Punjab">Kings XI Punjab</option>
+							<option value="Chennai Super Kings">Chennai Super Kings</option>
+                            <option value="Delhi Capitals">Delhi Capitals</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3 align-self-end">
+                    <button class="btn btn-primary btn-block text-white" <!--onclick ="myfunction()-->">Let's Predict</button>
+                    <!--<script>
+                      function myfunction()
+                      {
+                      var team1_name = document.getElementById("form1.tname1.value");
+                      var team2_name = document.getElementById("form1.tname2.value");
+                        if(team1_name == team2_name)
+                        {
+                        alert("Choose two different teams !")
+                        returnToPreviousPage();
+                        }
+                      }
+                    </script>-->
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+
+    <section class="py-5 bg-light" id="section-facts">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5" data-aos="fade-up">
+              <img src='{% static "pages/images/ipl.jpg" %}' alt="Image" class="img-fluid rounded">
+            </div>
+            <div class="col-md-12 col-lg-4 order-lg-1" data-aos="fade-up">
+              <h2 class="heading mb-4">#IPL2019</h2>
+              <hr>
+              <h5 class="mb-5">
+                <ul style="list-style-type:circle;">
+                  <li><b>NO</b> opening ceremony this year.</li>
+                  <li>Help for martyrs of <b>Pulwama attack.</b></li>
+                  <li><b>Lok Sabha elections</b> and <b>IPL</b> are at the same time in the country.</li>
+                  <li>16 years youngest player sold at the auction - <b>Prayas Ray Barman</b> to RCB.</li>
+                  <li><b>Sam Curran</b> - Highest bid for any foreign player - England all-rounder.</li>
+                  <li>Expensive player - <b>Jaydev Unadkat</b> (8.4 crores by Rajasthan Royals).</li>
+                  <li><b>Dhoni</b> and <b>Virat</b> face-off in the first match.</li>
+              </h5>
+              <p><a href="https://www.youtube.com/watch?v=3Rf7xqiNwG8"  data-fancybox class="btn btn-primary text-white py-2 mr-3 text-uppercase letter-spacing-1">Watch the video</a></p>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+    <!--<section class="py-5 bg-light" id="section-ptstable">
+        <div>
+
+        </div>
+      </section>-->
+
+      <div class="container section" id="section-team">
+
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7 mb-5">
+          <h2 class="heading" data-aos="fade-up">Teams in 2019</h2>
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="block-2">
+            <div class="flipper">
+              <div class="front" style="background-image: url('{% static "pages/images/csk2.png" %}');">
+                <div class="box">
+                  <h2>MS Dhoni</h2>
+                  <p>CSK Captain</p>
+                </div>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <blockquote>
+                  <!--<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>-->
+                </blockquote>
+                  <div class="image mr-3 align-self-center">
+                    <img src='{% static "pages/images/cskstats.png" %}' alt="">
+                  </div>
+              </div>
+            </div>
+          </div> <!-- .flip-container -->
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="block-2"> <!-- .hover -->
+            <div class="flipper">
+              <div class="front" style="background-image: url('{% static "pages/images/delhi_capitals.jpg" %}');">
+                <div class="box">
+                  <h2>Shreyas Iyer</h2>
+                  <p>DC Captain</p>
+                </div>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <blockquote>
+                  <!--<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>-->
+                </blockquote>
+                  <div class="image mr-3 align-self-center">
+                    <img src= '{% static "pages/images/dcstats.png" %}' alt="">
+                  </div>
+              </div>
+            </div>
+          </div> <!-- .flip-container -->
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="block-2">
+            <div class="flipper">
+              <div class="front" style="background-image: url('{% static "pages/images/rcb.jpg" %}');">
+                <div class="box">
+                  <h2>Virat Kohli</h2>
+                  <p>RCB Captain</p>
+                </div>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <blockquote>
+                  <!--<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>-->
+                </blockquote>
+                  <div class="image mr-3 align-self-center">
+                    <img src='{% static "pages/images/rcbstats.png" %}' alt="">
+                  </div>
+              </div>
+            </div>
+          </div> <!-- .flip-container -->
+        </div>
+
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="block-2">
+            <div class="flipper">
+              <div class="front" style="background-image: url('{% static "pages/images/mi.jpg" %}');">
+                <div class="box">
+                  <h2>Rohit Sharma</h2>
+                  <p>MI Captain</p>
+                </div>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <blockquote>
+                  <!--<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>-->
+                </blockquote>
+                  <div class="image mr-3 align-self-center">
+                    <img src= '{% static "pages/images/mistats.png" %}' alt="">
+                  </div>
+              </div>
+            </div>
+          </div> <!-- .flip-container -->
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="block-2"> <!-- .hover -->
+            <div class="flipper">
+              <div class="front" style="background-image: url('{% static "pages/images/srh.jpg" %}');">
+                <div class="box">
+                  <h2>Kane Williamson</h2>
+                  <p>SRH Captain</p>
+                </div>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <blockquote>
+                  <!--<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>-->
+                </blockquote>
+                  <div class="image mr-3 align-self-center">
+                    <img src= '{% static "pages/images/srhstats.png" %}' alt="">
+                  </div>
+              </div>
+            </div>
+          </div> <!-- .flip-container -->
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="block-2">
+            <div class="flipper">
+              <div class="front" style="background-image: url('{% static "pages/images/kkr.jpg" %}');">
+                <div class="box">
+                  <h2>Dinesh Karthik</h2>
+                  <p>KKR Captain</p>
+                </div>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <blockquote>
+                  <!--<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>-->
+                </blockquote>
+                  <div class="image mr-3 align-self-center">
+                    <img src= '{% static "pages/images/kkrstats.png" %}' alt="">
+                  </div>
+              </div>
+            </div>
+          </div> <!-- .flip-container -->
+        </div>
+		
+		<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="block-2">
+            <div class="flipper">
+              <div class="front" style="background-image: url('{% static "pages/images/kxip.jpg" %}');">
+                <div class="box">
+                  <h2>Ravichandran Ashwin</h2>
+                  <p>KXIP Captain</p>
+                </div>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <blockquote>
+                  <!--<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>-->
+                </blockquote>
+                  <div class="image mr-3 align-self-center">
+                    <img src= '{% static "pages/images/kxipstats.png" %}' alt="">
+                  </div>
+              </div>
+            </div>
+          </div> <!-- .flip-container -->
+        </div>
+
+		<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="block-2">
+            <div class="flipper">
+              <div class="front" style="background-image: url('{% static "pages/images/rr.jpg" %}');">
+                <div class="box">
+                  <h2>Ambati Rayudu</h2>
+                  <p>RR Captain</p>
+                </div>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <blockquote>
+                  <!--<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>-->
+                </blockquote>
+                  <div class="image mr-3 align-self-center">
+                    <img src= '{% static "pages/images/rrstats.png" %}' alt="">
+                  </div>
+              </div>
+            </div>
+          </div> <!-- .flip-container -->
+        </div>
+		
+      </div>
+    </div>
+    <!-- END .block-2 -->
+
+      <section class="section" id="section-leaders">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-7">
+              <h2 class="heading" data-aos="fade-up">2019 Leaders</h2>
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+              <a href="" class="room">
+                <figure class="img-wrap">
+                  <img src='{% static "pages/images/davidwarner.png" %}' alt="Free website template" class="img-fluid mb-3">
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>David Warner</h2>
+                  <span class="text-uppercase letter-spacing-1">Orange Cap</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+              <a href="" class="room">
+                <figure class="img-wrap">
+                  <img src='{% static "pages/images/rabada.png" %}' alt="Free website template" class="img-fluid mb-3">
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Kagiso Rabada</h2>
+                  <span class="text-uppercase letter-spacing-1">Purple Cap</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+              <a href="" class="room">
+                <figure class="img-wrap">
+                  <img src='{% static "pages/images/russell.png" %}' alt="Free website template" class="img-fluid mb-3">
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Andre Russell</h2>
+                  <span class="text-uppercase letter-spacing-1">Most Valuable Player</span>
+                </div>
+              </a>
+            </div>
+
+			<div class="col-md-6 col-lg-4" data-aos="fade-up">
+              <a href="" class="room">
+                <figure class="img-wrap">
+                  <img src='{% static "pages/images/joseph.png" %}' alt="Free website template" class="img-fluid mb-3">
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Alzarri Joseph</h2>
+                  <span class="text-uppercase letter-spacing-1">Best Bowling Figures</span>
+                </div>
+              </a>
+            </div>
+			
+			<div class="col-md-6 col-lg-4" data-aos="fade-up">
+              <a href="" class="room">
+                <figure class="img-wrap">
+                  <img src='{% static "pages/images/joseph.png" %}' alt="Free website template" class="img-fluid mb-3">
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Alzarri Joseph</h2>
+                  <span class="text-uppercase letter-spacing-1">Most Maidens</span>
+                </div>
+              </a>
+            </div>
+			
+			<div class="col-md-6 col-lg-4" data-aos="fade-up">
+              <a href="" class="room">
+                <figure class="img-wrap">
+                  <img src='{% static "pages/images/rashid.png" %}' alt="Free website template" class="img-fluid mb-3">
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Rashid Khan</h2>
+                  <span class="text-uppercase letter-spacing-1">Most Dot Balls</span>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    <!--<section class="py-5 bg-light" id="section-about">
+        <div>
+              <div class="col-md-6 col-lg-3 align-self-end">
+                <button class="btn btn-primary btn-block text-white"><center>Let's Predict</center></button>
+                  </div>
+              </div>
+        </div>
+      </section>-->
+
+
+    <section class="section blog-post-entry bg-light" id="section-twitter">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-8">
+              <h2 class="heading" data-aos="fade-up">What's going on twitter !</h2>
+              <hr>
+        </div>
+        </div>
+        <div class="col-md-16 col-lg-13 align-self-end">
+            <a class="twitter-timeline" href="https://twitter.com/IPL?ref_src=twsrc%5Etfw">Tweets by IPL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    </section>
+
+
+
+      <section class="section slider-section bg-light" id = "section-winning">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-7">
+              <h2 class="heading" data-aos="fade-up">Winning Diaries</h2>
+              <p data-aos="fade-up" data-aos-delay="100"><hr></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="home-slider major-caousel owl-carousel mb-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="slider-item">
+                  <a href="images/slider-1.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion11.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+                <div class="slider-item">
+                  <a href="images/slider-2.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion10.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+                <div class="slider-item">
+                  <a href="images/slider-3.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion9.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+                <div class="slider-item">
+                  <a href="images/slider-4.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion8.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+                <div class="slider-item">
+                  <a href="images/slider-5.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion7.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+                <div class="slider-item">
+                  <a href="images/slider-6.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion6.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+                <div class="slider-item">
+                  <a href="images/slider-7.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion5.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+				        <div class="slider-item">
+                  <a href="images/slider-8.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion4.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+                <div class="slider-item">
+                  <a href="images/slider-8.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion3.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+                <div class="slider-item">
+                  <a href="images/slider-8.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion2.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+                <div class="slider-item">
+                  <a href="images/slider-8.jpg" data-fancybox="images" data-caption="Caption for this image"><img src='{% static "pages/images/champion1.png" %}' alt="Image placeholder" class="img-fluid"></a>
+                </div>
+              </div>
+              <!-- END slider -->
+            </div>
+          
+          </div>
+        </div>
+      </section>
+      <!-- END section -->
+   
+      <script src= '{% static "pages/js/jquery-3.3.1.min.js" %}'></script>
+      <script src= '{% static "pages/js/jquery-migrate-3.0.1.min.js" %}'></script>
+      <script src= '{% static "pages/js/popper.min.js" %}'></script>
+      <script src= '{% static "pages/js/bootstrap.min.js" %}'></script>
+      <script src= '{% static "pages/js/owl.carousel.min.js" %}'></script>
+      <script src= '{% static "pages/js/jquery.stellar.min.js" %}'></script>
+      <script src= '{% static "pages/js/jquery.fancybox.min.js" %}'></script>
+      <script src= '{% static "pages/js/jquery.easing.1.3.js" %}'></script>
+      
+      
+      
+      <script src= '{% static "pages/js/aos.js" %}'></script>
+      
+      <script src= '{% static "pages/js/bootstrap-datepicker.js"  %}'></script> 
+      <script src= '{% static "pages/js/jquery.timepicker.min.js" %}'></script> 
+
+      <script src= '{% static "pages/js/main.js" %}'></script>
+    </body>
+  </html>
