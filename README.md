@@ -1,4 +1,4 @@
-<title> IPL Match Winner Prediction </title>
+<title>IPL Match Winner Prediction</title>
 
 <b>Website created using Django framework which predicts the winner of IPL match on the basis of previous 10 year Dataset</b>
 
