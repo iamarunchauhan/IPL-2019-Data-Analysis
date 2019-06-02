@@ -1,10 +1,11 @@
-# IPL-2019-Match-Prediction
-Website created using Django framework which predicts the winner of IPL match on the basis of previous 10 year Dataset.
+<strong> IPL Match Winner Prediction </strong>
 
-Techstack used - 
-1.Python 3
-2.Django
-3.HTML,CSS and Javascript 
+<i>Website created using Django framework which predicts the winner of IPL match on the basis of previous 10 year Dataset</i>
+
+Techstack used - <hr>
+1.Python 3 <br>
+2.Django <br>
+3.HTML,CSS and Javascript <br> 
 4.Libraries like Pandas,Numpy for Data Analysis 
 
 What's in this project? 
