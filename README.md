@@ -21,7 +21,11 @@ Techstack used - <br>
 1. Python 3 <br>
 2. Django <br>
 3. HTML,CSS and Javascript <br> 
-4. Libraries like Pandas,Numpy for Data Analysis 
+4. Libraries like Pandas,Numpy for Data Analysis <br>
+5. Twitter API
+
+OUTPUT - <hr>
+<a href ="https://drive.google.com/open?id=16_60bvMq9P7oFdLzxmECgNTdBnr6B0Am"> Check the output screenshots</a>
 
 <hr>
 References -
